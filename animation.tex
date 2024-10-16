@@ -1,0 +1,34 @@
+\documentclass{beamer}
+\usepackage[final]{animate}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{textpos}
+
+
+% Adjust the Beamer margins
+\setbeamersize{text margin left=0pt,text margin right=0pt}
+
+% Adjust the overall page margins
+\geometry{
+  paperwidth=\paperwidth,
+  paperheight=\paperheight,
+  margin=0pt, % No margins
+  top=0pt,
+  bottom=0pt,
+  left=0pt,
+  right=0pt
+}
+
+\begin{document}
+
+
+\begin{frame}[plain]
+  \begin{animateinline}[autoplay,loop,rate=0.5]{3} % Adjusted the frame rate
+    \multiframe{3}{i=0+1}{
+      \includegraphics[width=\paperwidth,height=\paperheight]{frame_\i.pdf}
+    }
+  \end{animateinline}
+
+\end{frame}
+
+\end{document}

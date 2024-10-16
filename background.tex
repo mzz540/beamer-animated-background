@@ -1,0 +1,38 @@
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage{xcolor}
+
+% Define colors
+\definecolor{color1}{RGB}{64, 99, 82}    % 406352 dark green
+\definecolor{color2}{RGB}{151, 208, 177} % 97D0B1 light green
+\definecolor{color3}{RGB}{200, 194, 224} % C8C2E0 light purple
+\definecolor{color4}{RGB}{240, 92, 79}   % F05C4F  coral
+\definecolor{color5}{RGB}{41, 40, 102}   % 292866 dark blue
+\definecolor{color6}{RGB}{255,252,240}   % FFFC10 cream
+
+\begin{document}
+
+\begin{tikzpicture}
+    \foreach \x in {0,0.2,...,15.75} {
+        \foreach \y in {0,0.2,...,11.75} {
+            \pgfmathparse{int(random(1,6))}
+            \let\colorindex\pgfmathresult
+            \ifcase\colorindex
+            \or
+                \fill[color1,opacity=0.1,draw=white] (\x,\y) rectangle ++(0.20,0.20);
+            \or
+                \fill[color2,opacity=0.1,draw=white] (\x,\y) rectangle ++(0.20,0.20);
+            \or
+                \fill[color3,opacity=0.1,draw=white] (\x,\y) rectangle ++(0.20,0.20);
+            \or
+                \fill[color4,opacity=0.1,draw=white] (\x,\y) rectangle ++(0.20,0.20);
+            \or
+                \fill[color5,opacity=0.1,draw=white] (\x,\y) rectangle ++(0.20,0.20);
+            \or
+                \fill[color6,opacity=0.1,draw=white] (\x,\y) rectangle ++(0.20,0.20);              
+            \fi
+        }
+    }
+\end{tikzpicture}
+
+
+\end{document}
